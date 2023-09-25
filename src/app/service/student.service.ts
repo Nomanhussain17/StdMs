@@ -7,8 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class StudentService {
   url = "http://localhost:3000/Student"
-  Student: any;
-  itemsPerPage: any;
 
   constructor(private http:HttpClient) { }
 
@@ -31,6 +29,4 @@ export class StudentService {
   update(id:number, data:any){
     return this.http.put(`${this.url}/${id}`,data)
   }
-
-
 }

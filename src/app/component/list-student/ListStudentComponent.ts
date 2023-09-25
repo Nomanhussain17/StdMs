@@ -69,8 +69,11 @@ export class ListStudentComponent implements OnInit, AfterViewInit {
 
   hideModal: Boolean = true
 
-  hide() {
+  rowId: any;
+
+  hide(id: any) {
     this.hideModal = false;
+    this.rowId = id;
   }
 
   cancel() {
@@ -90,4 +93,5 @@ export class ListStudentComponent implements OnInit, AfterViewInit {
     }, 3000);
   }
 
-}
+  }
+

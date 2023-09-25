@@ -1,4 +1,3 @@
-
 <div class="p-4 main-content">
 
   <div class="d-flex justify-content-around mb-3">
@@ -64,20 +63,22 @@
         <td>{{item.address}}</td>
         <td>{{item.addmissionDate}}</td>
         <td>{{item.monthlyFees}}</td>
-        <td><button class="btn btn-success" routerLink="EditRecord/{{item.id}}" >Edit</button></td>
-        <td><button class="btn btn-primary" routerLink="Show/{{item.id}}" >View</button></td>
-        <td><button class="btn btn-danger" (click)="hide()" >Delete</button></td>
+        <td><button class="btn btn-success" routerLink="EditRecord/{{item.id}}">Edit</button></td>
+        <td><button class="btn btn-primary" routerLink="Show/{{item.id}}">View</button></td>
+        <td><button class="btn btn-danger" (click)="hide(item.id)">Delete</button></td>
 
-        <div class="custom-alert text-dark position-fixed start-50 translate-middle"
-         [class.hidden]="hideModal">
-          <p>Are you sure you want to delete this record?</p>
-          <button class="btn btn-danger" (click)="DeleteStudent(item.id)">Delete</button>
+
+        <div class="custom-alert text-dark position-fixed start-50 translate-middle" [class.hidden]="hideModal">
+          <p><span style="font-weight: bold; color: red;">RECORD NO = </span><span
+              style="font-weight: bold;">{{rowId}}</span>
+          <p>
+          <p class="space">Are you sure you want to delete this record?</p>
+          <button class="btn btn-danger" (click)="DeleteStudent(rowId)">Delete</button>
           <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
         </div>
-
-
-
       </tr>
+
+
     </tbody>
   </table>
 
